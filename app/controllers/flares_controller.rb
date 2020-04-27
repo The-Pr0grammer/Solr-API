@@ -1,6 +1,6 @@
 class FlaresController < ApplicationController
         def index
-            flares = Flare.all
+            @flares = Flare.all
             render json: @flares
         end
         
@@ -11,6 +11,6 @@ class FlaresController < ApplicationController
     
         private
         def flare_params
-            params.require(flare:).permit(:user_id, :title, :content, :image_url, :views, :😎)
+            params.require(:flare).permit(:user_id, :title, :content, :image_url, :views, :😎)
         end
 end

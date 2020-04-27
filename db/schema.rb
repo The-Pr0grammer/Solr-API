@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_194227) do
     t.string "image_url"
     t.string "location"
     t.integer "orbits"
-    t.string "password"
     t.integer "quanta"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
         def index
-            responses = Response.all
+            2responses = Response.all
             render json: @responses 
         end
         
@@ -11,6 +11,6 @@ class ResponsesController < ApplicationController
     
         private
         def response_params
-            params.require(response:).permit(:user_id, :flare_id, :content, :image_url)
+            params.require(:response).permit(:user_id, :flare_id, :content, :image_url)
         end
 end
