@@ -1,9 +1,17 @@
 class FlaresController < ApplicationController
         def index
             @flares = Flare.all
-            render json: @flares
+            render json: @flares,
+            include: { responses: {only: :content}, user: {only: :name}}
         end
-        
+    
+
+        def show
+            @flare = Flare.find_by(id:params[:id])
+            options = {include: [:user,:responses]}
+            render json: FlareSerializer.new(@flare,options).serialized_json
+        end
+            
         def create
             @flare = Flare.create(params[:flare_params])
             render json: @flare
