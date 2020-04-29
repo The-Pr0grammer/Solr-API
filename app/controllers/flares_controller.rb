@@ -2,7 +2,7 @@ class FlaresController < ApplicationController
         def index
             @flares = Flare.all
             render json: @flares,
-            include: { responses: {only: :content}, user: {only: :name}}
+            include: { responses: {only: :content}, user: {only: [:name,:image_url]}}
         end
     
 
