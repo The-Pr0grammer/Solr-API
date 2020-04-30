@@ -17,11 +17,9 @@ ActiveRecord::Schema.define(version: 2020_04_27_194227) do
 
   create_table "flares", force: :cascade do |t|
     t.integer "user_id"
-    t.string "title"
     t.integer "interacts"
     t.string "content"
     t.string "image_url"
-    t.integer "views"
     t.integer "😎"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
