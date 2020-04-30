@@ -26,5 +26,6 @@ class FlaresController < ApplicationController
         private
         def flare_params
             params.require(:flare).permit(:id,:user_id, :title, :content, :image_url, :views, :😎)
+            # routine
         end
 end
