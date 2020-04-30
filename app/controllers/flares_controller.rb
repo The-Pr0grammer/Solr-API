@@ -2,10 +2,9 @@ class FlaresController < ApplicationController
         def index
             @flares = Flare.all
             render json: @flares,
-            include: { responses: {only: :content}, user: {only: [:name,:image_url]}}
+            include: { responses: {only: :content}, user: {only: [:name,:image_url,:location]}}
         end
     
-
         def show
             @flare = Flare.find_by(id:params[:id])
             options = {include: [:user,:responses]}
@@ -25,7 +24,7 @@ class FlaresController < ApplicationController
     
         private
         def flare_params
-            params.require(:flare).permit(:id,:user_id, :title, :content, :image_url, :views, :😎)
+            params.require(:flare).permit(:id,:user_id, :title, :content, :image_url, :interacts, :😎)
             # routine
         end
 end

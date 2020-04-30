@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :image_url
       t.string :location
       t.integer :orbits
+      t.integer :energy
       t.integer :quanta
       t.string :password
 
