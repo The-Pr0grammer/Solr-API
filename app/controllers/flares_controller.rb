@@ -2,7 +2,7 @@ class FlaresController < ApplicationController
         def index
             @flares = Flare.all
             render json: @flares,
-            include: { responses: {only: :content}, user: {only: [:name,:image_url,:location]}}
+            include: {user: {}, responses: {include: :user}}
         end
     
         def show
@@ -25,6 +25,5 @@ class FlaresController < ApplicationController
         private
         def flare_params
             params.require(:flare).permit(:id,:user_id, :title, :content, :image_url, :interacts, :😎)
-            # routine
         end
 end
