@@ -1,6 +1,6 @@
 class FlaresController < ApplicationController
         def index
-            @flares = Flare.all
+            @flares = Flare.all.order(id: :desc)
             render json: @flares,
             include: {user: {}, responses: {include: :user}}
         end
